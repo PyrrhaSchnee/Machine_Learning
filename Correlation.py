@@ -17,13 +17,6 @@ from pathlib import Path
 
 TRAIN_FILE: str = "Train_knight.csv"
 
-
-def get_mean(values: np.ndarray) -> float:
-    """
-    get the mean value of an object of numpy.ndarray type
-    """
-
-
 def load_csv(path: str | Path) -> pd.DataFrame:
     """
     Take a string or a Path object, try to access it

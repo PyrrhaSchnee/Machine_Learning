@@ -8,7 +8,7 @@
 **/.env
 # C extensions
 *.so
-
+voter.py
 # Distribution / packaging
 .Python
 **/build/

@@ -11,6 +11,7 @@ One histogram per feature
 
 from __future__ import annotations
 from pathlib import Path
+import traceback
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
@@ -152,6 +153,9 @@ def main() -> int:
         return 0
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
+        # tb = traceback.TracebackException.from_exception(e, capture_locals=True)
+        # print("".join(tb.format()), file=sys.stderr)
+        # raise
         return 1
 
 
