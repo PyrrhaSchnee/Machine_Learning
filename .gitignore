@@ -1,14 +1,17 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[codz]
+**/__pycache__/
+**/*.py[codz]
 *$py.class
-
+**/.venv
+**/venv
+**/*.env
+**/.env
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
-build/
+**/build/
 develop-eggs/
 dist/
 downloads/
