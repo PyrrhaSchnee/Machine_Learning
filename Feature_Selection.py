@@ -16,6 +16,7 @@ information to an unacceptable extend.
 
 VIF(xi) = 1 / (1 - R**2i)
 Tolerance(xi) = 1 / VIF = 1 - R**2i
+R = 1 - SSres / SStot
 
 for example, if a feature has VIF=20, then it means the information
 brought by it is redundant with other features, so we can safely
