@@ -95,7 +95,6 @@ All scripts are self-contained, well-documented, and designed to be run independ
 | **Data Manipulation** | Pandas, NumPy |
 | **Machine Learning** | scikit-learn (KNN, Random Forest, PCA, metrics) |
 | **Visualization** | Matplotlib |
-| **Scientific Computing** | SciPy |
 | **Build Automation** | Makefile, Shell script |
 
 ---
