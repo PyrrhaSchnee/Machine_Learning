@@ -17,6 +17,7 @@ from pathlib import Path
 
 TRAIN_FILE: str = "Train_knight.csv"
 
+
 def load_csv(path: str | Path) -> pd.DataFrame:
     """
     Take a string or a Path object, try to access it

@@ -58,12 +58,12 @@ tree:
 	-@chmod +x ./Tree.py
 	./Tree.py
 
-# voter:
-# 	-@chmod +x ./voter.py
-# 	./voter.py
+voter:
+	-@chmod +x ./voter.py
+	./voter.py
 
 clean:
-	-rm -rf *.png heatmap_corr.csv Tree.txt KNN.txt Validation_knight.csv Training_knight.csv
+	-rm -rf *.png heatmap_corr.csv Tree.txt KNN.txt Validation_knight.csv Training_knight.csv Voting.txt
 
 fclean: clean
 	-@rm -rf .venv Test_knight.csv Train_knight.csv Training_knight.csv Validation_knight.csv truth.txt predictions.txt

@@ -131,8 +131,8 @@ def plot_points(
             sys.exit(5)
         i += 1
 
-    (x_sep, y_sep) = ("Push", "Midi-chlorien")
-    (x_mix, y_mix) = ("Empowered", "Prescience")
+    x_sep, y_sep = ("Push", "Midi-chlorien")
+    x_mix, y_mix = ("Empowered", "Prescience")
     fig, axes = plt.subplots(2, 2, figsize=(16, 9), constrained_layout=True)
     plot_scatter(
         axes[0, 0],
@@ -267,8 +267,8 @@ def main() -> int:
         pretty_print(data_train_std, features_train, train_file)
         pretty_print(data_test_std, features_test, test_file)
         # plot_points(data_train, data_test, train_file, test_file)
-        (x_sep, y_sep) = ("Push", "Midi-chlorien")
-        (x_mix, y_mix) = ("Empowered", "Prescience")
+        x_sep, y_sep = ("Push", "Midi-chlorien")
+        x_mix, y_mix = ("Empowered", "Prescience")
         fig, axes = plt.subplots(
             1, 1, figsize=(16, 9), constrained_layout=True
         )
