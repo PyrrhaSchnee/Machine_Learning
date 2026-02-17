@@ -126,15 +126,15 @@ def plot_points(
             sys.exit(5)
         i += 1
 
-    x_sep, y_sep = ("Push", "Midi-chlorien")
-    x_mix, y_mix = ("Empowered", "Prescience")
+    x_mix, y_mix = ("Push", "Midi-chlorien")
+    x_sep, y_sep = ("Empowered", "Prescience")
     fig, axes = plt.subplots(2, 2, figsize=(16, 9), constrained_layout=True)
     plot_scatter(
         axes[0, 0],
         data_train,
         x_sep,
         y_sep,
-        f"Mixed: {x_sep} vs {y_sep}",
+        f"Separated: {x_sep} vs {y_sep}",
         "knight",
     )
     plot_scatter(
@@ -142,7 +142,7 @@ def plot_points(
         data_train,
         x_mix,
         y_mix,
-        f"Separated: {x_mix} vs {y_mix}",
+        f"Mixed: {x_mix} vs {y_mix}",
         "knight",
     )
     plot_scatter(
@@ -150,13 +150,13 @@ def plot_points(
         data_test,
         x_sep,
         y_sep,
-        f"Mixed: {x_sep} vs {y_sep}",
+        f"Separated: {x_sep} vs {y_sep}",
         None,
     )
     plot_scatter(
-        axes[1, 1], data_test, x_mix, y_mix, f"Separated: {x_mix} vs {y_mix}", None
+        axes[1, 1], data_test, x_mix, y_mix, f"Mixed: {x_mix} vs {y_mix}", None
     )
-    plt.savefig("points.png", dpi=300)
+    plt.savefig("Mixed.png", dpi=300)
     plt.show()
     plt.close()
 
