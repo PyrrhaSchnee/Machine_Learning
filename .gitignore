@@ -1,4 +1,19 @@
 # Byte-compiled / optimized / DLL files
+heatmap_corr.csv
+histogram1.png
+histogram2.png
+Heatmap.png
+predictions.txt
+Test_knight.csv
+Train_knight.csv
+truth.txt
+Tree.png
+Tree.txt
+KNN.png
+KNN.txt
+Voting.txt
+cm.png
+points.png
 pyproject.toml
 **/__pycache__/
 **/*.py[codz]
@@ -9,7 +24,7 @@ pyproject.toml
 **/.env
 # C extensions
 *.so
-voter.py
+
 # Distribution / packaging
 .Python
 **/build/

@@ -274,7 +274,7 @@ def main() -> int:
             f"Separated: {x_sep} vs {y_sep}",
             "knight",
         )
-        plt.savefig("normalizaed.png", dpi=300)
+        plt.savefig("normalized.png", dpi=300)
         plt.show()
         plt.close()
         return 0

@@ -37,6 +37,9 @@ standard:
 normal:
 	-@chmod +x ./Normalization.py
 	./Normalization.py
+knn:
+	-@chmod +x ./KNN.py
+	./KNN.py
 
 split:
 	-@chmod +x ./split.py
@@ -51,6 +54,10 @@ heatmap:
 	./Heatmap.py
 
 variance:
+	-@chmod +x ./variances.py
+	./variances.py
+
+feature:
 	-@chmod +x ./Feature_Selection.py
 	./Feature_Selection.py
 
@@ -63,7 +70,9 @@ voter:
 	./voter.py
 
 clean:
-	-rm -rf *.png heatmap_corr.csv Tree.txt KNN.txt Validation_knight.csv Training_knight.csv Voting.txt
+	-rm -rf *.png heatmap_corr.csv Tree.txt Validation_knight.csv \
+	Training_knight.csv Voting.txt variances.png normalized.png points.png \
+	cm.png Heatmap.png histogram1.png histogram2.png KNN.png KNN.txt Tree.png \
 
 fclean: clean
-	-@rm -rf .venv Test_knight.csv Train_knight.csv Training_knight.csv Validation_knight.csv truth.txt predictions.txt
+	-@rm -rf .venv Test_knight.csv Train_knight.csv truth.txt predictions.txt

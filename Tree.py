@@ -24,7 +24,7 @@ from sklearn.tree import plot_tree
 
 TRAIN_FILE: str = "Train_knight.csv"
 TEST_FILE: str = "Test_knight.csv"
-RANDOM_SEED: int = 561
+RANDOM_SEED: int = 56
 
 
 def load_csv(path: str) -> pd.DataFrame:
@@ -161,7 +161,6 @@ def main() -> int:
         model = model_init()
         model = model.fit(x, y)
         prediction(model, test_data, feature_names)
-        print(f"[DEBUG]: {model}")
         return 0
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
