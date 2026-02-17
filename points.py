@@ -134,7 +134,7 @@ def plot_points(
         data_train,
         x_sep,
         y_sep,
-        f"Separated: {x_sep} vs {y_sep}",
+        f"Mixed: {x_sep} vs {y_sep}",
         "knight",
     )
     plot_scatter(
@@ -142,7 +142,7 @@ def plot_points(
         data_train,
         x_mix,
         y_mix,
-        f"Mixed: {x_mix} vs {y_mix}",
+        f"Separated: {x_mix} vs {y_mix}",
         "knight",
     )
     plot_scatter(
@@ -150,11 +150,11 @@ def plot_points(
         data_test,
         x_sep,
         y_sep,
-        f"Separated: {x_sep} vs {y_sep}",
+        f"Mixed: {x_sep} vs {y_sep}",
         None,
     )
     plot_scatter(
-        axes[1, 1], data_test, x_mix, y_mix, f"Mixed: {x_mix} vs {y_mix}", None
+        axes[1, 1], data_test, x_mix, y_mix, f"Separated: {x_mix} vs {y_mix}", None
     )
     plt.savefig("points.png", dpi=300)
     plt.show()
