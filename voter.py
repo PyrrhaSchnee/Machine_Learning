@@ -3,7 +3,7 @@
 voter.py
 
 Voting Classifier: combine three different classifiers
-(RandomForestClassifier, KNeighborsClassifier, GradientBoostingClassifier)
+(RandomForestClassifier, KNeighborsClassifier, LogisticRegression)
 into a single VotingClassifier using soft voting.
 
 The program takes Train_knight.csv as 1st argument,
@@ -30,10 +30,10 @@ import sys
 import traceback
 from sklearn.decomposition import PCA
 from sklearn.ensemble import (
-    GradientBoostingClassifier,
     RandomForestClassifier,
     VotingClassifier,
 )
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import f1_score, accuracy_score, precision_score
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -217,7 +217,7 @@ def build_voter(best_k: int) -> VotingClassifier:
     Build a soft-voting VotingClassifier from three estimators:
     1) RandomForestClassifier  (same as Tree.py)
     2) KNeighborsClassifier    (same as KNN.py, with tuned k)
-    3) GradientBoostingClassifier (third model of choice)
+    3) LogisticRegression      (third model of choice)
     """
     rf: RandomForestClassifier = RandomForestClassifier(
         n_estimators=400,
@@ -230,15 +230,13 @@ def build_voter(best_k: int) -> VotingClassifier:
     knn: KNeighborsClassifier = KNeighborsClassifier(
         n_neighbors=best_k, weights="distance", metric="minkowski", p=2
     )
-    gb: GradientBoostingClassifier = GradientBoostingClassifier(
-        n_estimators=300,
-        learning_rate=0.1,
-        max_depth=4,
+    lr: LogisticRegression = LogisticRegression(
+        max_iter=2000,
+        class_weight="balanced",
         random_state=RANDOM_SEED,
-        subsample=0.8,
     )
     voter: VotingClassifier = VotingClassifier(
-        estimators=[("rf", rf), ("knn", knn), ("gb", gb)],
+        estimators=[("rf", rf), ("knn", knn), ("lr", lr)],
         voting="soft",
         n_jobs=-1,
     )
