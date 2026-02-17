@@ -36,6 +36,7 @@ import traceback
 TRAIN_FILE: str = "Train_knight.csv"
 TEST_FILE: str = "Test_knight.csv"
 INF_THRESHOLD: float = 0.999999999
+TARGET_FEATURE_COUNT: int = 7
 
 
 def load_csv(path: str) -> pd.DataFrame:
@@ -177,26 +178,13 @@ def get_vif(data: pd.DataFrame) -> pd.DataFrame:
 
 def clear_vif(data: pd.DataFrame) -> pd.DataFrame:
     """
-    Remove all those who have a value of VIF >= 5
+    Keep only the TARGET_FEATURE_COUNT features with the lowest VIFs
+    by iteratively removing the feature with the highest VIF.
     """
-    while True:
-        max_label: str = ""
-        max_value: float = -999999.0
+    while data.shape[1] > TARGET_FEATURE_COUNT:
         vif: pd.DataFrame = get_vif(get_zscore(data.copy()))
-        # print(f"[DEBUG]: {vif.index.tolist()}")
-        i: int = 0
-        should_drop: bool = False
-        while i < vif.shape[0]:
-            if max_value < vif["VIF"].iloc[i] and vif["VIF"].iloc[i] >= 5.0:
-                max_value = vif["VIF"].iloc[i]
-                max_label = vif.index.tolist()[i]
-                # print(f"[DEBUG]: {max_label}\n{max_value}")
-                should_drop = True
-            i += 1
-        if should_drop:
-            data = data.drop(columns=[max_label])
-        else:
-            break
+        max_label: str = str(vif["VIF"].idxmax())
+        data = data.drop(columns=[max_label])
     return data
 
 

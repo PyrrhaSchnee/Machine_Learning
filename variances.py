@@ -107,9 +107,9 @@ def plot_var(
     ax.plot(x, var_cumul, marker="o")
     ax.axhline(var_cumul[i - 1], color="purple")
     ax.axvline(i, color="purple")
-    ax.set_title("PCA")
+    ax.set_title("Principal Component Analysis\nNumber of Features to retain at least 90% of information")
     ax.set_xlabel("Number of components")
-    ax.set_ylabel("Explained")
+    ax.set_ylabel("Percentage of Information cumulatively retained (%)")
     ax.set_xticks(x)
     ax.text(
         i + 0.2,

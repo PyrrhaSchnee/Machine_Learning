@@ -23,6 +23,8 @@ pyproject.toml
 **/venv
 **/*.env
 **/.env
+std.png
+variances.png
 # C extensions
 *.so
 
